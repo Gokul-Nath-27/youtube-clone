@@ -1,26 +1,36 @@
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Sidebar from "./components/Sidebar";
 import Navbar from './components/Navbar';
-
-const Container = styled.div`
-display: flex;
-`
-const Main = styled.div`
-flex:7;`
-const Wrapper = styled.div``
-
+import { darkTheme, lightTheme } from './utils/Theme'
+import { useContext } from 'react';
+import { DarkModeContext } from './contexts/DarkModeContext'
 function App() {
+  const { isDarkmode } = useContext(DarkModeContext)
+
   return (
-    <Container>
-      <Sidebar />
-      <Main>
+    <ThemeProvider theme={isDarkmode ? darkTheme : lightTheme}>
+      <Container>
+        <Sidebar />
+        <Main>
           <Navbar />
           <Wrapper>
             Video Cards
           </Wrapper>
-      </Main>
-    </Container>
+        </Main>
+      </Container>
+    </ThemeProvider>
+
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  `
+const Main = styled.div`
+  flex:7;
+  background-color: ${({ theme }) => theme.bgColorPrimary};
+  color:${({ theme }) => theme.text};
+  `
+const Wrapper = styled.div``
 
 export default App;
