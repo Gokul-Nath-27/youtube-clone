@@ -6,7 +6,7 @@ export const darkTheme = {
     hr:'#363636'
 }
 export const lightTheme = {
-    bgCobgColorPrimary: '#F2F2F2',
+    bgColorPrimary: '#f2f2f2',
     bgColorSecondary: 'white',
     text:'black',
     hover:'#E5E5E5',

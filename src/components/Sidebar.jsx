@@ -59,6 +59,7 @@ const Sidebar = () => {
                     </Button>
                 </SignIn>
                 <Hr />
+                <Title>Best of Gotube</Title>
                 <Item>
                     <LibraryMusicOutlinedIcon />
                     Music
@@ -99,7 +100,6 @@ const Sidebar = () => {
                 <Item onClick={() => (setIsDarkmode(!isDarkmode))}>
                     {(isDarkmode) ? (<LightModeOutlinedIcon />) : (<DarkModeOutlinedIcon />)}
                     {(isDarkmode) ? 'Light Mode' : 'Dark Mode'}
-
                 </Item>
             </Wrapper>
         </Container>
@@ -147,7 +147,11 @@ const Hr = styled.hr`
     margin:1rem 0;
     border: 0.5px solid ${({ theme }) => theme.hr};;
 `
-
+const Title = styled.h5`
+font-size: 14px;
+color: ${(theme) => theme.hover};
+margin:5px 0;
+`
 const SignIn = styled.div``
 const Button = styled.button`
     display:flex;
@@ -162,9 +166,5 @@ const Button = styled.button`
     border-radius:3px;
     cursor:pointer;
     margin-top:12px;
-
-    &:hover{
-    filter: brightness(1.1);
-    }
 `
 export default Sidebar

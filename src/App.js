@@ -4,21 +4,32 @@ import Navbar from './components/Navbar';
 import { darkTheme, lightTheme } from './utils/Theme'
 import { useContext } from 'react';
 import { DarkModeContext } from './contexts/DarkModeContext'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import Video from './pages/Video';
+
 function App() {
   const { isDarkmode } = useContext(DarkModeContext)
 
   return (
-    <ThemeProvider theme={isDarkmode ? darkTheme : lightTheme}>
-      <Container>
-        <Sidebar />
-        <Main>
-          <Navbar />
-          <Wrapper>
-            Video Cards
-          </Wrapper>
-        </Main>
-      </Container>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={isDarkmode ? darkTheme : lightTheme}>
+        <Container>  
+          <Sidebar />
+          <Main>
+            <Navbar />
+            <Wrapper>
+              <Routes>
+                <Route path="/">
+                  <Route index element={<Home />}/>
+                  <Route path='video' element={<Video />}/>
+                </Route>
+              </Routes>
+            </Wrapper>
+          </Main>
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
 
   );
 }
@@ -31,6 +42,8 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.bgColorPrimary};
   color:${({ theme }) => theme.text};
   `
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+
+`
 
 export default App;
