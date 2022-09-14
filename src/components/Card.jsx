@@ -6,7 +6,7 @@ const Card = () => {
             <Container>
                 <Image src="https://images.unsplash.com/photo-1598908314732-07113901949e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
                 <Details>
-                    <ChannelImg src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80" />
+                    <ChannelImg src="https://images.unsplash.com/photo-1598908314732-07113901949e" />
                     <Info>
                         <Title>This is a test Video Template.</Title>
                         <ChannelName>GoTube</ChannelName>

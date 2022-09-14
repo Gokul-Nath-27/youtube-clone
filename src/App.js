@@ -7,6 +7,7 @@ import { DarkModeContext } from './contexts/DarkModeContext'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Video from './pages/Video';
+import SignIn from './components/SignIn';
 
 function App() {
   const { isDarkmode } = useContext(DarkModeContext)
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/">
                   <Route index element={<Home />}/>
                   <Route path='video' element={<Video />}/>
+                  <Route path='signin' element={<SignIn />}/>
                 </Route>
               </Routes>
             </Wrapper>

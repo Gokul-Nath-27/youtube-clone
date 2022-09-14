@@ -19,16 +19,20 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import { useContext } from "react";
 import { DarkModeContext } from "../contexts/DarkModeContext";
+import { Link } from "react-router-dom";
+
 
 const Sidebar = () => {
     const { isDarkmode, setIsDarkmode } = useContext(DarkModeContext)
     return (
         <Container>
             <Wrapper>
-                <Logo>
-                    <Img src={GoTube} />
-                    GoTube.
-                </Logo>
+                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                    <Logo>
+                        <Img src={GoTube} />
+                        GoTube.
+                    </Logo>
+                </Link>
                 <Item>
                     <HomeIcon />
                     Home
@@ -53,10 +57,12 @@ const Sidebar = () => {
                 <Hr />
                 <SignIn>
                     <p>Sign in to like, comment and Subscribe.</p>
-                    <Button>
-                        <AccountCircleOutlinedIcon />
-                        SIGN IN
-                    </Button>
+                    <Link to='signin' style={{textDecoration:'none', color:'inherit'}}>
+                        <Button>
+                            <AccountCircleOutlinedIcon />
+                            SIGN IN
+                        </Button>
+                    </Link>
                 </SignIn>
                 <Hr />
                 <Title>Best of Gotube</Title>
@@ -110,10 +116,25 @@ const Sidebar = () => {
 const Container = styled.div`
     flex:1.25;
     height:100vh;
+    overflow-y: hidden;
     background-color: ${({ theme }) => theme.bgColorSecondary};
     color:${({ theme }) => theme.text};
     position:sticky;
     top:0;
+
+    &:hover{
+        overflow-y: scroll;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: ${({ theme }) => theme.bgColorSecondary};
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: ${({ theme }) => theme.hover};
+}
 `
 const Wrapper = styled.div`
     padding: 18px 26px;

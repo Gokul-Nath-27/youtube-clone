@@ -19,6 +19,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap:1rem;
-    margin: 30px 0 0 70px
+    justify-content: center;
+    margin-top: 1.5rem;
 `
 export default Home

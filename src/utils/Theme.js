@@ -3,12 +3,13 @@ export const darkTheme = {
     bgColorSecondary: '#202020',
     text:'white',
     hover:'#363636',
-    hr:'#363636'
+    hr:'#363636',
+    textlight:'#CCCFC9'
 }
 export const lightTheme = {
     bgColorPrimary: '#f2f2f2',
     bgColorSecondary: 'white',
-    text:'black',
+    text:'#030304',
     hover:'#E5E5E5',
     hr:'#E5E5E5'
 }

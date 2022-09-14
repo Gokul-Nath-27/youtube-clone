@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <Container>
@@ -9,14 +10,17 @@ const Navbar = () => {
                     <Input placeholder='search for contents' />
                     <SearchIcon />
                 </Search>
-                <Button>
-                    <AccountCircleOutlinedIcon />
-                    SIGN IN
-                </Button>
+                <Link to='signin' style={{textDecoration:'none', color:'inherit'}}>
+                    <Button>
+                        <AccountCircleOutlinedIcon />
+                        SIGN IN
+                    </Button>
+                </Link>
             </Wrapper>
         </Container>
     )
 }
+
 
 const Container = styled.div`
     padding: 0.5rem 0;
